@@ -287,4 +287,6 @@ def release(args: String*): Unit = {
       // publishing to the nexus repository.  This artifact is used by metronome.
       %('sbt, "publish")
   }
+
+  githubClient.tag(config.version.commit, config.version.toTagString)
 }
